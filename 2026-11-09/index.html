@@ -29,14 +29,14 @@
             <section class="post">
                 <p>
                     Around a week has passed since the first update. During this period, I had a deeper look at
-                    the codebase, and experimented adding new features to see how this code would change. This led me
+                    the codebase, and experimented with adding new features to see how this code would change. This led me
                     to a Drive + Task architecture. This is probably not a novel thing, but I haven't seen it
-                    before, and don't know its original name. I believe this was likely implemented in a similar way
+                    before, and I don't know its original name. I believe this was likely implemented in a similar way
                     in other games as well. Well, how does it work?
                 </p>
 
                 <p>
-                    During the game, there are hominids, bisons, mammoths, etc, walking around and making choices.
+                    During the game, there are hominids, bisons, mammoths, etc., walking around and making choices.
                     Each animal has a brain, and this brain periodically gets to decide if it should keep doing
                     what it's doing, or reconsider and go do something else. These choices are made via a "Drive"
                     system. An animal has a list of drives (drive to forage, drive to hunt, drive to flee,
@@ -45,15 +45,15 @@
                 </p>
 
                 <p>
-                    For example: an animal that was eating, realized that it was also being hunted. Now, its
+                    For example: an animal that is eating realizes that it is also being hunted. Now, its
                     drive to flee is suddenly higher than its drive to eat, even if it was a little hungry.
                 </p>
                 
                 <p>
                     To achieve that, every drive implements a function that calculates the current
-                    urgency. All drives "compete", and the more urgent one is chosen. It will then select a
+                    urgency. All drives "compete", and the most urgent one is chosen. It will then select a
                     task, based on specific criteria of that drive (basically, a function that returns a task).
-                    This task is the way that animal or hominid will act on to fulfill its drive.
+                    This task is how that animal or hominid will act to fulfill its drive.
                 </p>
 
                 <p>
@@ -72,10 +72,10 @@
                 <p>
                     I find it really interesting to notice the effects of changes made to tasks, or what new behaviors
                     appear after the introduction of new drives. For example: hominids rest by the campfire by default.
-                    This creates a rather common effect - to see multiple humans gathered around the campfire, relaxing
+                    This creates a rather common scene: multiple humans gathered around the campfire, relaxing
                     together. This gathering wasn't programmed into the game, but it happened as a consequence of
-                    individual drives. I feel like, in the future, experimenting with emergent social behavior as a
-                    consequence of drive-fulfillment.
+                    individual drives. In the future, I feel like experimenting with emergent social behavior as a
+                    consequence of drive fulfillment.
                 </p>
 
                 <p>
@@ -87,16 +87,16 @@
 
                 <p>
                     I want this game to have interesting hunting techniques, such as luring, tricking, or tiring animals.
-                    I want the player to feel rewarded after a good hunt, but also, to feel how bad it gets when there's
+                    I want the player to feel rewarded after a good hunt, but also to feel how bad it gets when there's
                     nothing to eat.
                 </p>
 
                 <figure>
                     <a href="gathering.png"><img src="gathering.png" /></a>
-                    <figcaption>Hominids driven by the desire to rest, gather around a campfire.</figcaption>
+                    <figcaption>Hominids driven by the desire to rest gather around a campfire.</figcaption>
                 </figure>
                 <figure>
-                    <a href="gathering.png"><img src="gathering.png" /></a>
+                    <a href="mammoth-eats-carrots.png"><img src="mammoth-eats-carrots.png" /></a>
                     <figcaption>A mammoth explores a patch of carrots.</figcaption>
                 </figure>
                 <figure>
