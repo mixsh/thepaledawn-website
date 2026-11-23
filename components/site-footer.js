@@ -11,7 +11,7 @@ class SiteFooter extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
       <footer class="container" role="contentinfo">
-        <small>dunbar | 2026</small>
+        <small>The Pale Dawn | 2026</small>
       </footer>
     `;
   }

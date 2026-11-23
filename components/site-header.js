@@ -6,7 +6,7 @@
  *
  * Examples:
  *   <site-header></site-header>
- *   <site-header title="dunbar"></site-header>
+ *   <site-header title="The Pale Dawn"></site-header>
  */
 class SiteHeader extends HTMLElement {
   connectedCallback() {
