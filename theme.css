@@ -45,6 +45,13 @@ site-header h1 {
     letter-spacing: -0.08em;
 }
 
+main section p a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.2em;
+}
+
 main a:hover {
     color: var(--accent-dark);
 }

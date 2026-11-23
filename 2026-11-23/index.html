@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+            name="description"
+            content="2026-11-23 | The Pale Dawn"
+        />
+        <meta name="author" content="m1cz" />
+
+        <title>2026-11-23 | The Pale Dawn</title>
+
+        <link rel="icon" href="/favicon.ico" />
+
+        <link rel="stylesheet" href="../reset.css" />
+        <link rel="stylesheet" href="../theme.css" />
+        <script src="../components/site-header.js" defer></script>
+        <script src="../components/site-footer.js" defer></script>
+    </head>
+
+    <body>
+        <site-header title="The Pale Dawn"></site-header>
+
+        <main class="container" role="main">
+            <h2><time datetime="2026-11-23">2026-11-23</time></h2>
+
+            <section class="post">
+                <p>
+                    The last few weeks were interesting. I tried to take the simulation to another level,
+                    creating new systems, making architectural changes to the code, etc. Today I'll go through
+                    some of them.
+                </p>
+
+                <p>
+                    While simple combat was already implemented, it soon proved to be too simple,
+                    boring and "unrealistic". Predators now choose to hunt, and prey decides to flee or
+                    to fight back. Now, hominids can also be hunted, although most animals will avoid
+                    doing so until there are no more options.
+                </p>
+
+                <p>
+                    Each creature now has <strong>Satiety</strong>, <strong>Stamina</strong>, and 
+                    <strong>Health</strong>. Satiety drops when hungry. When too hungry, health gets
+                    drained. Stamina allows running/hunting/fleeing with greater speeds. An
+                    animal with higher stamina will likely be able to reach its prey in a hunt. Hominids
+                    also have <strong>Restlessness</strong>, which I view as the human
+                    drive to do stuff instead of staying quiet. Currently, it leads hominids to take strolls.
+                    I still want to better explore restlessness, and probably change it to a more advanced
+                    "mental state" thing.
+                </p>
+
+                <p>
+                    There's now a day/night cycle. It gets dark. If a campfire wasn't built yet,
+                    hominids will prioritize doing it. Right now, anyone can just build the campfire,
+                    as there's still no crafting system. This will change! This game is about primitive
+                    wilderness survival, so expect having to forage the things that will allow you to
+                    create other things. Having darkness in the game forced me to create a simple
+                    lighting system, which didn't yet exist.
+
+                    <figure>
+                        <a href="campfire-night.gif"><img src="campfire-night.gif" /></a>
+                        <figcaption>
+                            A flickering radial light emanates from the campfire, illuminating our
+                            tired heroes.
+                        </figcaption>
+                    </figure>
+                </p>
+
+                <p>
+                    Yes, there's some new "art". I have created some VERY CRUDE hominids in Aseprite. Also,
+                    some carrots, a bison, and a bear. My intent was not to create beautiful art yet, but
+                    establish a basic art pipeline. For now, there's a simple sprite sheet, which is exported
+                    in to an All.png file with everything I need. I did this already because in my last project I
+                    neglected art too much, leaving it for "later" and looking at uglyness every single day. I believe
+                    one the reasons for my failure was splitting work too much. I spent too much time thinking
+                    of game design and code architecture, and too little of art. Now I'm looking for a more 
+                    "cyclic" + balanced approach, where I work on all of these things, without leaving something
+                    abandoned for too long.
+                </p>
+
+                <p>
+                    In the last post <a href="../2026-11-09/">I mentioned the Drive/Task system</a>.
+                    When a Drive score is calculated, it needs some information, which was being fetched for
+                    every Drive on every update. Adding a <strong>Perception</strong> layer fixed this. While
+                    perceiving things, a creature (hominid or other animal) collects information from its
+                    sorroundings. This information is made available to the Drives. Another new "brain improvement"
+                    was adding a <strong>Memory</strong> structure. If an animal finds a spot where there's
+                    plenty of food, it'll store the location of that food, and will be able to return to that
+                    location even when venturing far away. Both changes really improved decision making.
+                </p>
+
+                <p>
+                    There were also general improvements on rendering performance, collisions, pathfinding, etc.
+                    There's also a new proto-inventory system with item stacks, and a new fixed-timestep code (60
+                    per second), leading the game to some hopeful determinism.
+                </p>
+
+                <p>
+                    I also added very basic Lua modding support. Nothing fancy, it's just a Lua file with
+                    most of the game's magic numbers. It will likely evolve with time.
+                </p>
+
+                <p>
+                    That's it, thanks for reading!
+                </p>
+            </section>
+        </main>
+
+        <site-footer></site-footer>
+    </body>
+</html>
