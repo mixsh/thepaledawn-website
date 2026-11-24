@@ -191,4 +191,19 @@ site-footer footer {
     main section p {
         font-size: 1rem;
     }
+
+    /* Let figures bleed edge to edge, past the container's 1rem gutter. */
+    .post figure {
+        margin-inline: -1rem;
+        padding-inline: 0;
+        border-inline: 0;
+    }
+
+    .post img {
+        border-inline: 0;
+    }
+
+    .post figcaption {
+        padding-inline: 1rem;
+    }
 }
